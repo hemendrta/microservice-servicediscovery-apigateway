@@ -1,0 +1,16 @@
+#Specifying the port on which the application will respond
+
+server:
+  port: 9001
+
+#Specifying the name of application
+
+spring:
+  application:
+    name: user-service
+
+#Providing the hostname on which the instance of this application needs to register.
+
+eureka:
+  instance:
+    hostname: localhost

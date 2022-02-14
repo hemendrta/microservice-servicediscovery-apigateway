@@ -1,0 +1,27 @@
+#Specifying the port on which the service will listen to requests
+
+server:
+  port: 8999
+
+#Specifying the hostname.
+
+eureka:
+  instance:
+    hostname: localhost
+
+#Configuration for the services -- user-service and contact-service.
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: user-service
+          uri: lb://user-service
+          predicates:
+            - Path=/user/**
+        - id: contact-service
+          uri: lb://contact-service
+          predicates:
+            - Path=/contact/**

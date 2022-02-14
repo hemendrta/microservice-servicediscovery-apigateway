@@ -1,0 +1,15 @@
+#Specifying the port on which the application will respond, this service is eureka server and will register the services once they start.
+
+server:
+  port: 8761
+
+#Configuration for not registering with itself and instance name.
+
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+  server:
+    waitTimeInMsWhenSyncEmpty: 0
+  instance:
+    hostname: localhost
